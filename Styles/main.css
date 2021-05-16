@@ -645,3 +645,53 @@ a.more:hover {
     transform-origin: center;
     animation: animate-line 2s ease infinite;
 }
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    cursor: pointer;
+}
+
+.cal-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.calendar button {
+    outline: none;
+    border: none;
+    padding: 10px;
+    border: solid 1px #fff;
+    background-color: #ffcc00;
+    color: #fff;
+}
+
+.monthly-events .events p a {
+    text-decoration: none;
+}
+
+.monthly-events .events p a:hover {
+    text-decoration: underline;
+}
+
+#jan-events,
+#feb-events,
+#march-events,
+#apr-events,
+#may-events,
+#june-events,
+#july-events,
+#aug-events,
+#sept-events,
+#oct-events,
+#nov-events,
+#dec-events {
+    display: none;
+}
