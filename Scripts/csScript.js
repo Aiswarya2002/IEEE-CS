@@ -1,3 +1,19 @@
+let events = document.getElementsByClassName('events');
+let date = new Date();
+let curr_month = date.getMonth();
+
+cal_view(curr_month);
+
+function cal_view(mon) {
+    if (curr_month == mon)
+        return;
+    else {
+        document.getElementById('events-wrapper').style.display = "block";
+        events[curr_month].style.display = "none";
+        events[mon].style.display = "block";
+        curr_month = mon;
+    }
+}
 "use strict";
 
 let menu_open = document.getElementById("menu-open");
@@ -26,22 +42,20 @@ let func3 = setInterval(animeThree, 4000);
 window.onload = () => {
     const width = window.innerWidth;
     let gallary_link = document.getElementById('gallery-link');
-    if(width > 780)
+    if (width > 780)
         gallary_link.href = "#img-gallery-pc";
     else
         gallary_link.href = "#img-gallery-mobile";
 }
 
 // menu_closing function
-menu_close.addEventListener('click', function()
-{
+menu_close.addEventListener('click', function() {
     menu_open.style.display = "block";
     menu_close.style.display = "none";
 });
 
 // menu_opening function
-menu_open.addEventListener('click', function()
-{
+menu_open.addEventListener('click', function() {
     menu_open.style.display = "none";
     menu_close.style.display = "block";
 });
@@ -50,8 +64,8 @@ menu_open.addEventListener('click', function()
 bg_img.onmouseover = () => {
     bg_img.style.zIndex = "-1";
     bg_video.style.zIndex = "1";
-    cs_video.src = 
-    "https://www.youtube.com/embed/lPAAlbd27rs?controls=0";
+    cs_video.src =
+        "https://www.youtube.com/embed/lPAAlbd27rs?controls=0";
 }
 
 // onmouseout event to remove embeded link from iframe
@@ -89,5 +103,5 @@ window.onscroll = () => {
     let bar = document.getElementById("spyBar");
     const OFFSET = window.innerHeight / window.innerWidth;
 
-    bar.style.width = (OFFSET*scroll_pos).toString() + "px";
+    bar.style.width = (OFFSET * scroll_pos).toString() + "px";
 }
